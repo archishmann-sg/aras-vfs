@@ -41,6 +41,9 @@ bin/
 # Conan
 conan/
 
+# VCPKG
+vcpkg*/
+
 # Presets and compile commands
 CMakeUserPresets.json
 compile_commands.json
