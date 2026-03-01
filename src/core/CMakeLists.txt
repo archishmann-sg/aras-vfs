@@ -1,0 +1,9 @@
+set(CORE_MODULES
+    ${CMAKE_CURRENT_SOURCE_DIR}/core.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/types.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/errors.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/result.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/log.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/log_sinks.cppm
+    PARENT_SCOPE
+)
