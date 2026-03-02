@@ -1,0 +1,5 @@
+set(STORAGE_MODULES
+    ${CMAKE_CURRENT_SOURCE_DIR}/storage.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/interface.cppm
+    PARENT_SCOPE
+)
