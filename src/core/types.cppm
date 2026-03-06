@@ -1,4 +1,6 @@
 module;
+#include <format>
+#include <functional>
 #include <type_traits>
 #include <utility>
 export module core:types;
@@ -66,6 +68,29 @@ export namespace core::inline types
     template <typename T>
     concept is_strong_type = s_is_strong_type<std::remove_cv_t<T>>::value;
 } // namespace core::inline types
+
+export namespace std
+{
+    template <typename T>
+    concept hashable = requires(const T val) { std::hash<T>{}(val); };
+
+    template <typename T, typename Tag>
+        requires hashable<T>
+    struct hash<core::types::c_strong_type<T, Tag>>
+    {
+        auto operator()(const core::types::c_strong_type<T, Tag> &value) const noexcept(std::is_nothrow_invocable_v<std::hash<T>, const T &>) -> std::size_t
+        {
+            return std::hash<T>{}(value.get());
+        }
+    };
+
+    template <typename T, typename Tag>
+    struct formatter<core::types::c_strong_type<T, Tag>> : std::formatter<T>
+    {
+        using std::formatter<T>::parse;
+        using std::formatter<T>::format;
+    };
+} // namespace std
 
 // Implementation
 namespace core::inline types
