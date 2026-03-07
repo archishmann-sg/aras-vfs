@@ -1,15 +1,6 @@
 cmake_minimum_required(VERSION 3.30)
 
-# Set VCPKG to correct triplet for Linux
-if (CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
-    set(VCPKG_OVERLAY_TRIPLETS "${CMAKE_SOURCE_DIR}/vcpkg-config/my-triplets" CACHE STRING "VCPKG overlay triplet")
-    set(VCPKG_TARGET_TRIPLET "x64-linux-clang" CACHE STRING "VCPKG target triplet")
-endif()
-
 project(aras-fs LANGUAGES CXX)
-
-set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake
-    CACHE STRING "Vcpkg toolchain file")
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
