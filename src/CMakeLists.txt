@@ -17,6 +17,11 @@ target_sources(${PROJECT_NAME}_static_lib
     FILES ${STORAGE_MODULES}
 )
 
+target_link_libraries(${PROJECT_NAME}_static_lib
+    PUBLIC
+    stdc++exp
+)
+
 add_executable(${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
