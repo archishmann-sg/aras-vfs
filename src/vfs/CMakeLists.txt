@@ -1,5 +1,6 @@
 set(VFS_MODULES
     ${CMAKE_CURRENT_SOURCE_DIR}/vfs.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/types.cppm
     ${CMAKE_CURRENT_SOURCE_DIR}/interface.cppm
     PARENT_SCOPE
 )
