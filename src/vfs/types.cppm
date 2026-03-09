@@ -35,11 +35,22 @@ export namespace vfs::inline types
     using file_handle_id_t = core::c_strong_type<std::uint64_t, tag::file_handle_id>;
     using offset_t = core::c_strong_type<std::uint64_t, tag::offset>;
 
-    namespace err_code
+    enum class e_err_code : std::uint8_t
     {
-        // TODO: Define error codes for interface.
+        success = 0,
+        file_not_found = 1,
+        access_denied = 2,
+        disk_full = 3,
+        invalid_handle = 4,
+        io_error = 5,
+        not_a_directory = 6,
+        is_a_directory = 7,
+        already_exists = 8,
+        directory_not_empty = 9,
+        invalid_parameter = 10,
+        unknown_error = 255,
 
-    } // namespace err_code
+    };
 
     // Standard access request bitmask
     enum class e_open_mode : std::uint8_t
