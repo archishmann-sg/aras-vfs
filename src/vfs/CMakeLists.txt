@@ -5,5 +5,6 @@ set(VFS_MODULES
     ${CMAKE_CURRENT_SOURCE_DIR}/file_handle.cppm
     ${CMAKE_CURRENT_SOURCE_DIR}/path_cache.cppm
     ${CMAKE_CURRENT_SOURCE_DIR}/node_registry.cppm
+    ${CMAKE_CURRENT_SOURCE_DIR}/path_resolver.cppm
     PARENT_SCOPE
 )
