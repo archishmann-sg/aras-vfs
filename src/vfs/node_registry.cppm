@@ -17,6 +17,7 @@ export namespace vfs::inline node_registry
     struct s_node_metadata
     {
         storage::types::node_id_t node_id;
+        storage::types::node_id_t parent_id;
 
         std::uint64_t size{};
         std::uint64_t version{};
